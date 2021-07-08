@@ -71,6 +71,8 @@ COPY requirements.txt /dogeblock/
 COPY setup.py /dogeblock/
 COPY ./dogeblock/lib/config.py /dogeblock/dogeblock/lib/
 WORKDIR /dogeblock
+RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade -vv setuptools
 RUN pip3 install -r requirements.txt
 COPY . /dogeblock
 RUN python3 setup.py develop
