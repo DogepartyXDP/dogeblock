@@ -85,6 +85,6 @@ COPY docker/dogewallet.conf /root/.config/dogeblock/dogewallet.conf
 COPY docker/start.sh /usr/local/bin/start.sh
 RUN chmod a+x /usr/local/bin/start.sh
 
-EXPOSE 4100 4101 4102 14100 14101 14102
+EXPOSE 4105 4106 4107 14105 14106 14107
 
 ENTRYPOINT ["start.sh"]
