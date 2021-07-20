@@ -5,7 +5,7 @@
 ##
 VERSION = "1.4.0"  # should keep up with dogeblockd repo's release tag
 
-DB_VERSION = 24  # a db version increment will cause dogeblockd to rebuild its database off of dogepartyd
+DB_VERSION = 0  # a db version increment will cause dogeblockd to rebuild its database off of dogepartyd
 
 UNIT = 100000000
 
@@ -32,7 +32,7 @@ XDP_TO_DOGE = XDP + '/' + DOGE
 MAX_REORG_NUM_BLOCKS = 10  # max reorg we'd likely ever see
 MAX_FORCED_REORG_NUM_BLOCKS = 20  # but let us go deeper when messages are out of sync
 
-QUOTE_ASSETS = [DOGE, XDOGE, XDP, 'PEPECASH', 'BITCRYSTALS', 'FLDC', 'RUSTBITS', 'SCOTCOIN', 'DATABITS', 'BITCORN', 'MAFIACASH']  # define the priority for quote asset
+QUOTE_ASSETS = [DOGE, XDP]  # define the priority for quote asset
 MARKET_LIST_QUOTE_ASSETS = [XDP, DOGE]  # define the order in the market list
 
 DEFAULT_BACKEND_PORT_REGTEST = 28335
