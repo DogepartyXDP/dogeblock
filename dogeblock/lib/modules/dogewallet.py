@@ -494,8 +494,8 @@ def store_wallet_message(msg, msg_data, decorate=True):
             continue
         else:
             logger.debug("store_wallet_message: stored {}".format(new_seq))
-            if config.state['cw_last_message_seq'] < new_seq:
-                config.state['cw_last_message_seq'] = new_seq
+            if config.state['dw_last_message_seq'] < new_seq:
+                config.state['dw_last_message_seq'] = new_seq
             break
 
     # every so often, trim up the table
@@ -589,8 +589,8 @@ def init():
             'when': calendar.timegm(time.gmtime()),
             'message': None,
         })
-    config.state['cw_last_message_seq'] = last_wallet_message['_id'] if last_wallet_message else 0
-    logger.debug("cw_last_message_seq: {}".format(config.state['cw_last_message_seq']))
+    config.state['dw_last_message_seq'] = last_wallet_message['_id'] if last_wallet_message else 0
+    logger.debug("dw_last_message_seq: {}".format(config.state['dw_last_message_seq']))
 
     # init GEOIP
     import maxminddb
@@ -640,6 +640,6 @@ def process_rollback(max_block_index):
             'when': calendar.timegm(time.gmtime()),
             'message': None,
         })
-        config.state['cw_last_message_seq'] = 0
+        config.state['dw_last_message_seq'] = 0
     else:  # rollback
         pass
