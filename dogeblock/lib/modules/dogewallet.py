@@ -97,7 +97,7 @@ def is_ready():
     return {
         'caught_up': blockfeed.fuzzy_is_caught_up(),
         'last_message_index': config.state['last_message_index'],
-        'cw_last_message_seq': config.state['cw_last_message_seq'],
+        'dw_last_message_seq': config.state['dw_last_message_seq'],
         'block_height': config.state['dp_backend_block_index'],
         'testnet': config.TESTNET,
         'regtest': config.REGTEST,
