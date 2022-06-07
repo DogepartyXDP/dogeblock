@@ -91,7 +91,7 @@ def get_price_primitives(start_dt=None, end_dt=None):
     mps_xdp_doge = get_market_price_summary(config.XDP, config.DOGE, start_dt=start_dt, end_dt=end_dt)
     xdp_doge_price = mps_xdp_doge['market_price'] if mps_xdp_doge else None  # == XDP/DOGE
     doge_xdp_price = calc_inverse(mps_xdp_doge['market_price']) if mps_xdp_doge else None  # DOGE/XDP
-    return mps_xpd_doge, xdp_doge_price, doge_xdp_price
+    return mps_xdp_doge, xdp_doge_price, doge_xdp_price
 
 
 def get_asset_info(asset, at_dt=None):
